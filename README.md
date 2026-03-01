@@ -14,7 +14,7 @@ It is designed for real-world apps, not demos.
 - Tailwind CSS for styling with sensible defaults
 - Accessible components and patterns by default
 - Clean separation between UI primitives and app-level components
-- Designed to be copied and adapted, not installed as a dependency
+- Designed to be copied and adapted, not installed as a dependency.
 
 ## Design Philosophy
 
