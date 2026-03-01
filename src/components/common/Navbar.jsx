@@ -41,7 +41,12 @@ const Navbar = () => {
           <Link
             key={index}
             to={link.path}
-            className={`text-secondary font-semibold ${path === link.path && "underline underline-offset-4 decoration-secondary"}`}
+            className={`
+                        relative text-secondary font-semibold px-2
+                        after:absolute after:left-0 after:-top-4 after:h-0.75 after:bg-destructive
+                        after:w-0 after:transition-all after:duration-300
+                        ${path === link.path ? "after:w-full" : ""}
+                        `}
           >
             {link.name}
           </Link>
