@@ -4,7 +4,7 @@ import ConversationSidebar from "../messages/ConversationSidebar";
 import MessageInput from "../messages/MessageInput";
 import MessageWindowHeader from "../messages/MessageWindowHeader";
 
-const DesktopChatLayout = () => {
+const ChatLayout = () => {
   const { conversationId } = useParams();
 
   return (
@@ -23,4 +23,4 @@ const DesktopChatLayout = () => {
   );
 };
 
-export default DesktopChatLayout;
+export default ChatLayout;
