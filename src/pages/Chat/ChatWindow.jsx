@@ -4,7 +4,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 const ChatWindow = () => {
   const messages = Array.from({ length: 100 }, (_, i) => ({
     id: i,
-    text: `This is message number ${i + 1}`,
+    text: `Hey, how are you doing today? This message is very long and should not
+          break the UI at all.This message is very long and should not
+          break the UI at all.`,
     side: i % 2 === 0 ? "right" : "left",
   }));
 
@@ -15,10 +17,10 @@ const ChatWindow = () => {
           {messages.map((msg) => (
             <div
               key={msg.id}
-              className={`max-w-xs px-4 py-2 rounded-lg ${
+              className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg wrap-break-word ${
                 msg.side === "right"
-                  ? "self-end bg-primary text-secondary"
-                  : "self-start bg-secondary text-primary"
+                  ? "self-end bg-primary text-secondary font-normal"
+                  : "self-start bg-secondary text-primary font-normal"
               }`}
             >
               {msg.text}
