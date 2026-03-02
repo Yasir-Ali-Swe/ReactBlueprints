@@ -11,7 +11,9 @@ import Home from "./pages/public/home";
 import Contact from "./pages/public/contact";
 import PublicLayout from "@/components/layouts/PublicLayout";
 import DoctorListingPage from "@/pages/public/DoctorListingPage";
-import MessagesPgae from "@/pages/public/MessagesPgae";
+import ChatLayout from "@/components/layouts/ChatLayout";
+import ChatWindowPlaceholder from "@/pages/Chat/ChatWIndowPlacholder";
+import ChatWindow from "@/pages/Chat/ChatWindow";
 
 const App = () => {
   return (
@@ -20,7 +22,10 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/doctors" element={<DoctorListingPage />} />
-        <Route path="/messages" element={<MessagesPgae />} />
+      </Route>
+      <Route element={<ChatLayout />}>
+        <Route path="/messages" element={<ChatWindowPlaceholder />} />
+        <Route path="/messages/:conversationId" element={<ChatWindow />} />
       </Route>
       <Route path="/auth/login" element={<Login />} />
       <Route path="/auth/register" element={<Register />} />
