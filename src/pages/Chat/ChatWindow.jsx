@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-const MessageWindow = () => {
+const ChatWindow = () => {
   const messages = Array.from({ length: 100 }, (_, i) => ({
     id: i,
     text: `This is message number ${i + 1}`,
@@ -30,4 +30,4 @@ const MessageWindow = () => {
   );
 };
 
-export default MessageWindow;
+export default ChatWindow;
