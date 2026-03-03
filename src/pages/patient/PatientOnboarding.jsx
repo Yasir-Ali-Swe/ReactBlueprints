@@ -24,7 +24,7 @@ const PatientOnboarding = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <h1 className="text-primary bg-muted text-xl font-bold text-center w-full py-5">
+      <h1 className="text-secondary bg-primary text-xl font-bold text-center w-full py-5">
         Complete your profile to continue
       </h1>
 
