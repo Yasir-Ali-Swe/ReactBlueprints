@@ -57,7 +57,7 @@ const PatientOnboarding = () => {
                       : "bg-muted text-muted-foreground border-border"
                 }`}
               >
-                {isCompleted ? <Check className="w-5 h-5" /> : s}
+                {isCompleted ? <Check className="w-5 h-5 " /> : s}
               </div>
             );
           })}
