@@ -33,23 +33,33 @@ const MedicalHistoryStep = ({ currentStep }) => {
         {/* Height */}
         <div className="space-y-2">
           <Label htmlFor="height">Height (cm)</Label>
-          <Input id="height" type="number" placeholder="Enter your height" />
+          <Input
+            id="height"
+            type="number"
+            placeholder="Enter your height"
+            className={"rounded-sm"}
+          />
         </div>
 
         {/* Weight */}
         <div className="space-y-2">
           <Label htmlFor="weight">Weight (kg)</Label>
-          <Input id="weight" type="number" placeholder="Enter your weight" />
+          <Input
+            id="weight"
+            type="number"
+            placeholder="Enter your weight"
+            className={"rounded-sm"}
+          />
         </div>
 
         {/* Blood Group */}
         <div className="space-y-2">
           <Label htmlFor="bloodGroup">Blood Group</Label>
           <Select>
-            <SelectTrigger>
+            <SelectTrigger className={"rounded-sm"}>
               <SelectValue placeholder="Select blood group" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className={"rounded-sm"}>
               <SelectGroup>
                 <SelectLabel>Blood Group</SelectLabel>
                 <SelectItem value="A+">A+</SelectItem>
@@ -67,7 +77,7 @@ const MedicalHistoryStep = ({ currentStep }) => {
 
         <div className="space-y-2">
           <Label htmlFor="allergies">Allergies (comma separated)</Label>
-          <Input id="allergies" placeholder="E.g., Peanuts, Pollen" />
+          <Input id="allergies" placeholder="E.g., Peanuts, Pollen" className={"rounded-sm"} />
         </div>
 
         <div className="space-y-2">
@@ -77,6 +87,7 @@ const MedicalHistoryStep = ({ currentStep }) => {
           <Input
             id="chronicConditions"
             placeholder="E.g., Diabetes, Hypertension"
+            className={"rounded-sm"}  
           />
         </div>
 
@@ -87,6 +98,7 @@ const MedicalHistoryStep = ({ currentStep }) => {
           <Input
             id="currentMedications"
             placeholder="E.g., Metformin, Aspirin"
+            className={"rounded-sm"}
           />
         </div>
 
@@ -94,6 +106,7 @@ const MedicalHistoryStep = ({ currentStep }) => {
           <Button
             type="button"
             variant="outline"
+            className={"rounded-sm"}
             onClick={handlePrevious}
             disabled={currentStep === 1}
           >
@@ -103,6 +116,7 @@ const MedicalHistoryStep = ({ currentStep }) => {
           <Button
             type="button"
             onClick={handleNext}
+            className={"rounded-sm"}
             disabled={currentStep === 4}
           >
             Next
