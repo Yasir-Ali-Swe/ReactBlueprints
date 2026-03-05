@@ -165,12 +165,12 @@ const DoctorListingPage = () => {
           filteredDoctors.map((doc) => (
             <div
               key={doc.id}
-              className="p-5 rounded-sm shadow-md hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center bg-card"
+              className="relative p-5 rounded-sm shadow-md hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center bg-card"
             >
               {/* Avatar */}
               <div className="place-self-end">
                 {doc.verified && (
-                  <Badge className={"bg-green-600 text-white font-semibold"}>
+                  <Badge className={"absolute top-3 right-3 bg-green-600 text-white font-semibold"}>
                     Verified
                   </Badge>
                 )}
