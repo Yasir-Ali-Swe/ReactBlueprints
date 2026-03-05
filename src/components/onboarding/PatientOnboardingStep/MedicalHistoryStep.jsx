@@ -1,6 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {
+  Combobox,
+  ComboboxChip,
+  ComboboxChips,
+  ComboboxChipsInput,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxValue,
+} from "@/components/ui/combobox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -14,8 +26,54 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+const chronicConditions = [
+  "Diabetes",
+  "Hypertension",
+  "Asthma",
+  "Chronic Obstructive Pulmonary Disease (COPD)",
+  "Heart Disease",
+  "Chronic Kidney Disease",
+  "Arthritis",
+  "Osteoporosis",
+  "Depression",
+  "Anxiety",
+  "Cancer",
+  "Thyroid Disorders",
+  "Stroke",
+  "Obesity",
+  "Alzheimer's Disease",
+  "Parkinson's Disease",
+  "Epilepsy",
+  "HIV/AIDS",
+  "Autoimmune Disorders",
+  "Migraine",
+  "Other Chronic Conditions",
+];
+const allergies = [
+  "Peanuts",
+  "Tree Nuts (Almonds, Walnuts, Cashews)",
+  "Milk",
+  "Eggs",
+  "Wheat/Gluten",
+  "Soy",
+  "Fish",
+  "Shellfish",
+  "Pollen",
+  "Dust Mites",
+  "Pet Dander (Cats, Dogs)",
+  "Mold",
+  "Latex",
+  "Insect Stings (Bees, Wasps)",
+  "Perfume/Fragrance",
+  "Medication (Penicillin, Aspirin, etc.)",
+  "Nickel/Metals",
+  "Food Additives (Sulfites, MSG)",
+  "Cockroach Droppings",
+  "Other Environmental Allergens",
+];
 const MedicalHistoryStep = ({ currentStep }) => {
   const navigate = useNavigate();
+  const [value, setValue] = useState([]);
 
   const handleNext = () => {
     navigate(`/patient-onboarding/${currentStep + 1}`);
@@ -76,30 +134,73 @@ const MedicalHistoryStep = ({ currentStep }) => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="allergies">Allergies (comma separated)</Label>
-          <Input id="allergies" placeholder="E.g., Peanuts, Pollen" className={"rounded-sm"} />
+          <Label htmlFor="allergies">Allergies (E.g., Peanuts, Pollen)</Label>
+          <Combobox
+            items={allergies}
+            multiple
+            value={value}
+            onValueChange={setValue}
+            className="rounded-sm w-full"
+          >
+            <ComboboxChips>
+              <ComboboxValue>
+                {value.map((item) => (
+                  <ComboboxChip key={item}>{item}</ComboboxChip>
+                ))}
+              </ComboboxValue>
+              <ComboboxChipsInput placeholder="Add Allergies" />
+            </ComboboxChips>
+            <ComboboxContent
+              align="start"
+              position="popper"
+              className="min-w-full w-full mt-1"
+            >
+              <ComboboxEmpty>No items found.</ComboboxEmpty>
+              <ComboboxList>
+                {(item) => (
+                  <ComboboxItem key={item} value={item}>
+                    {item}
+                  </ComboboxItem>
+                )}
+              </ComboboxList>
+            </ComboboxContent>
+          </Combobox>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 w-full">
           <Label htmlFor="chronicConditions">
-            Chronic Conditions (comma separated)
+            Chronic Conditions (E.g., Diabetes, Hypertension)
           </Label>
-          <Input
-            id="chronicConditions"
-            placeholder="E.g., Diabetes, Hypertension"
-            className={"rounded-sm"}  
-          />
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="currentMedications">
-            Current Medications (comma separated)
-          </Label>
-          <Input
-            id="currentMedications"
-            placeholder="E.g., Metformin, Aspirin"
-            className={"rounded-sm"}
-          />
+          <Combobox
+            items={chronicConditions}
+            multiple
+            value={value}
+            onValueChange={setValue}
+            className="rounded-sm w-full"
+          >
+            <ComboboxChips>
+              <ComboboxValue>
+                {value.map((item) => (
+                  <ComboboxChip key={item}>{item}</ComboboxChip>
+                ))}
+              </ComboboxValue>
+              <ComboboxChipsInput placeholder="Add Chronic Conditions" />
+            </ComboboxChips>
+            <ComboboxContent
+              align="start"
+              position="popper"
+              className="min-w-full w-full mt-1"
+            >
+              <ComboboxEmpty>No items found.</ComboboxEmpty>
+              <ComboboxList>
+                {(item) => (
+                  <ComboboxItem key={item} value={item}>
+                    {item}
+                  </ComboboxItem>
+                )}
+              </ComboboxList>
+            </ComboboxContent>
+          </Combobox>
         </div>
 
         <div className="flex justify-between pt-6 ">
