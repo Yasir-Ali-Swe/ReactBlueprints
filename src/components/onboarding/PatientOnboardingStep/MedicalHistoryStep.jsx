@@ -73,7 +73,8 @@ const allergies = [
 ];
 const MedicalHistoryStep = ({ currentStep }) => {
   const navigate = useNavigate();
-  const [value, setValue] = useState([]);
+  const [allergyValue, setAllergyValue] = useState([]);
+  const [conditionValue, setConditionValue] = useState([]);
 
   const handleNext = () => {
     navigate(`/patient-onboarding/${currentStep + 1}`);
@@ -138,13 +139,13 @@ const MedicalHistoryStep = ({ currentStep }) => {
           <Combobox
             items={allergies}
             multiple
-            value={value}
-            onValueChange={setValue}
+            value={allergyValue}
+            onValueChange={setAllergyValue}
             className="rounded-sm w-full"
           >
             <ComboboxChips>
               <ComboboxValue>
-                {value.map((item) => (
+                {allergyValue.map((item) => (
                   <ComboboxChip key={item}>{item}</ComboboxChip>
                 ))}
               </ComboboxValue>
@@ -174,13 +175,13 @@ const MedicalHistoryStep = ({ currentStep }) => {
           <Combobox
             items={chronicConditions}
             multiple
-            value={value}
-            onValueChange={setValue}
+            value={conditionValue}
+            onValueChange={setConditionValue}
             className="rounded-sm w-full"
           >
             <ComboboxChips>
               <ComboboxValue>
-                {value.map((item) => (
+                {conditionValue.map((item) => (
                   <ComboboxChip key={item}>{item}</ComboboxChip>
                 ))}
               </ComboboxValue>
