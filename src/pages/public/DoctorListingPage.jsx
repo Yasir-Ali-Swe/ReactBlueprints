@@ -169,7 +169,7 @@ const DoctorListingPage = () => {
           filteredDoctors.map((doc) => (
             <div
               key={doc.id}
-              className="relative p-5 rounded-sm shadow-md hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center bg-card"
+              className="relative p-5 rounded-2xl hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border bg-card shadow-md"
             >
               <div className="place-self-end">
                 {doc.verified && (
