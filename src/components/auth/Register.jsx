@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/select.jsx";
 import { Input } from "@/components/ui/input.jsx";
 import { Label } from "@/components/ui/label.jsx";
-import { Mail, Eye, EyeOff, UserPlus } from "lucide-react";
+import { Mail, Eye, EyeOff, User } from "lucide-react";
 import { Button } from "@/components/ui/button.jsx";
 import { Link } from "react-router-dom";
 
@@ -70,7 +70,7 @@ const Register = () => {
               placeholder="Please enter your full name"
             />
             <Label htmlFor="fullname" className={"cursor-pointer"}>
-              <UserPlus
+              <User
                 className="absolute top-7.5 right-3 text-foreground"
                 size={20}
               />
