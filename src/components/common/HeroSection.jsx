@@ -39,7 +39,7 @@ const HomeHeroSection = ({
     ...new Set(DoctorsData.map((doc) => doc.specialization)),
   ];
   return (
-    <div className="w-full rounded-sm overflow-hidden my-2 flex flex-col md:flex-row dark:bg-muted/10  bg-card shadow-lg">
+    <div className="w-full rounded-2xl overflow-hidden my-2 flex flex-col md:flex-row border bg-card shadow-md">
       {/* Left Content */}
       <div className="w-full my-2 md:my-0 md:w-1/2 px-6 flex flex-col justify-center space-y-4 order-2 md:order-1">
         <h1 className="text-2xl  lg:text-3xl text-center md:text-left font-bold text-chart-2">
