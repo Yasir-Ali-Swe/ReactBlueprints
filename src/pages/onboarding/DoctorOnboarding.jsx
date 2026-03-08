@@ -1,6 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Check } from "lucide-react";
+import {
+  Check,
+  User,
+  Phone,
+  Stethoscope,
+  Ambulance,
+  GraduationCap,
+  Briefcase,
+} from "lucide-react";
+import { FaBriefcase } from "react-icons/fa";
+import { MdEventAvailable } from "react-icons/md";
+import { BiInfoCircle } from "react-icons/bi";
+import { MdApartment } from "react-icons/md";
 import PersonalInfoStep from "@/components/onboarding/DoctorOnboardingStep/PersonalInfoStep";
 import DoctorEducationStep from "@/components/onboarding/DoctorOnboardingStep/EducationStep";
 import ClinicDetailsStep from "@/components/onboarding/DoctorOnboardingStep/ClinicDetailsStep";
@@ -57,7 +69,33 @@ const DoctorOnboarding = () => {
                       : "bg-muted text-muted-foreground border-border"
                 }`}
               >
-                {isCompleted ? <Check className="w-5 h-5" /> : s}
+                {isCompleted ? (
+                  <Check className="w-5 h-5" />
+                ) : s == 1 ? (
+                  <User
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : s == 2 ? (
+                  <GraduationCap
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : s == 3 ? (
+                  <MdApartment
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : s == 4 ? (
+                  <FaBriefcase
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : s == 5 ? (
+                  <BiInfoCircle
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : s == 6 ? (
+                  <MdEventAvailable
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : null}
               </div>
             );
           })}
