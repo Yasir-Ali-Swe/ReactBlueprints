@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Check } from "lucide-react";
+import { Check, User, Phone, Stethoscope, Ambulance } from "lucide-react";
 
 import PersonalInfoStep from "@/components/onboarding/PatientOnboardingStep/PersonalInfoStep";
 import ContactInfoStep from "@/components/onboarding/PatientOnboardingStep/ContactInfoStep";
@@ -57,7 +57,25 @@ const PatientOnboarding = () => {
                       : "bg-muted text-muted-foreground border-border"
                 }`}
               >
-                {isCompleted ? <Check className="w-5 h-5 " /> : s}
+                {isCompleted ? (
+                  <Check className="w-5 h-5 " />
+                ) : s == 1 ? (
+                  <User
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : s == 2 ? (
+                  <Phone
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : s == 3 ? (
+                  <Stethoscope
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                ) : (
+                  <Ambulance
+                    className={`w-5 h-5 ${isActive ? "text-background" : "text-primary"}`}
+                  />
+                )}
               </div>
             );
           })}
