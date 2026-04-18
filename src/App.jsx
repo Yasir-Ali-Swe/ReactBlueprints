@@ -41,7 +41,7 @@ const App = () => {
         <Route path="/messages/:conversationId" element={<ChatWindow />} />
       </Route>
       <Route path="/dashboard" element={<DashboardLayout />}>
-        <Route index element={<DashboardIndexRedirect role={"patient"} />} />
+        <Route index element={<DashboardIndexRedirect role={"doctor"} />} />
         <Route path="patient/stats" element={<PatientStats />} />
         <Route path="doctor/stats" element={<DoctorStats />} />
         <Route path="admin/stats" element={<AdminStats />} />
