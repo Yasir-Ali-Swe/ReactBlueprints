@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { MessageCircle, Eye, CalendarRange } from "lucide-react";
+import { MessageCircle, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -30,7 +30,7 @@ const Appointment = () => {
 
   const filteredAppointments = useMemo(
     () => filterPatientAppointments(patientAppointments, filter),
-    [filter]
+    [filter],
   );
 
   const columns = useMemo(
@@ -72,7 +72,7 @@ const Appointment = () => {
         ),
       },
     ],
-    []
+    [],
   );
 
   if (loading) {
@@ -119,13 +119,6 @@ const Appointment = () => {
           />
         }
       />
-
-      <div className="rounded-lg border bg-muted/30 p-4 text-sm text-muted-foreground flex items-start gap-2">
-        <CalendarRange className="mt-0.5 size-4" />
-        <p>
-          Cancellation is available for upcoming appointments with at least 24 hours remaining.
-        </p>
-      </div>
     </div>
   );
 };
