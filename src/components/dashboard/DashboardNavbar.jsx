@@ -20,7 +20,7 @@ import {
 import { getDashboardRoutes } from "@/lib/DasboardRotes";
 
 const DashboardNavbar = () => {
-  const routes = getDashboardRoutes("patient");
+  const routes = getDashboardRoutes("doctor");
   const location = useLocation();
   const path = location.pathname;
   const [open, setOpen] = useState(false);
